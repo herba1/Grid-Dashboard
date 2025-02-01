@@ -1,0 +1,23 @@
+{
+  "name": "grid-dashboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herba1/Grid-Dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/herba1/Grid-Dashboard/issues"
+  },
+  "homepage": "https://github.com/herba1/Grid-Dashboard#readme",
+  "description": "",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
