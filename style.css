@@ -1,25 +1,43 @@
+:root{
+    --text-clr-sec: rgb(141, 141, 141);
+
+    --text-small: 0.8rem;
+}
+
+
 *{
     font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     text-decoration: none;
     padding: 0;
+    margin:0;
     box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+img{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
 }
 
 
 .dashboard-layout{
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 230px 1fr;
 }
 
 .sidebar{
-    background-color: rgb(47, 170, 241);
+    background-color: rgb(0, 0, 0);
     color: white;
     /* width: 250px; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 15px 15px 15px 30px;
-    gap: 5px;
+    gap: 40px;
 }
 
 .sidebar__utility,
@@ -43,11 +61,16 @@
     gap: 10px;
 }
 
+.sidebar__header img{
+    filter: invert(1);
+}
+
 .sidebar__item{
     font-size: 1.2rem;
 }
 .sidebar__item img{
     width: 0.7em;
+    filter: invert(1);
 }
 
 .sidebar__link{
@@ -60,8 +83,174 @@
 }
 
 .navbar{
+    display: grid;
+    grid-template-rows: 60px 90px;
+}
+
+.navbar--top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.navbar__search, .navbar__profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.navbar__search{
+    flex-basis: 60%;
+}
+
+.navbar__search input{
+    border: transparent;
+    background-color: rgb(219, 219, 219);
+    border-radius: 20px;
+    height: 23px;
+    width: 100%;
+}
+
+.navbar__profile a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: black;
+}
+.navbar__profile img {
+    width: 30px;
+    height:30px;
+}
+
+.navbar--bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar__greeting{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+.navbar__greeting img{
+    width: 70px;
+    height: 70px;
+}
+
+.navbar__buttons{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-right: 20px;
+}
+
+.navbar__buttons button{
+    width: 60px;
+    height: 40px;
+    border-radius: 30px;
+    border:transparent;
+    font-size: .8rem;
 }
 
 .content{
-    background-color: rgb(184, 184, 184);
+    background-color: rgb(219, 219, 219);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 20px;
+    gap: 20px;
+}
+
+.content__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr)) ;
+
+    gap: 20px;
+    /* height: 90%; */
+}
+
+.content__card{
+    background-color: white;
+    border-left: solid 5px rgb(72, 194, 61);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content__actions{
+    align-self: flex-end;
+    display: flex;
+    gap: 20px;
+}
+
+.content__actions button{
+    border: none;
+    background-color: transparent;
+}
+
+.sidecontent{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.sidecontent__announcements, .sidecontent__trending{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidecontent__announcements div{
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 10px;
+    font-size: 0.8rem;
+}
+
+.sidecontent__announcements .sidecontent__item:nth-child(1n+2){
+    border-top: 1px solid rgb(203, 203, 203);
+}
+
+.sidecontent__item{
+    /* height: 100px; */
+    display: inline-block;
+    overflow: auto;
+    color: black;
+    padding: 10px;
+}
+
+.sidecontent__trending div{
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 15px;
+}
+
+.sidecontent__trending .sidecontent__item{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sidecontent__trending .sidecontent__item p:nth-child(1n+2){
+    color: var(--text-clr-sec);
+    font-size: var(--text-small);
+    /* color: blue; */
+}
+
+
+.sidecontent__item img{
+    width: 50px;
+    height: 50px;
 }
